@@ -1,0 +1,23 @@
+{
+  "name": "teach12",
+  "version": "1.0.0",
+  "description": "Login Verification using NODE.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christensen-Dustin/teach12.git"
+  },
+  "author": "Dustin Christensen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Christensen-Dustin/teach12/issues"
+  },
+  "homepage": "https://github.com/Christensen-Dustin/teach12#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
