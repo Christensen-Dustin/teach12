@@ -43,7 +43,7 @@ app.use(verify.logVerifyRequest);
 app.get('/getServerTime', verify.verifyLogin, verify.getServerTimeStamp);
 
 // Paths
-app.post('/login', login.userLogin);
+app.post('/login',  login.userLogin);
 app.post('/logout', logout.userLogout);
 
 // Start the SERVER listening

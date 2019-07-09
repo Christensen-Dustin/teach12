@@ -7,7 +7,7 @@ function userLogin(request, response) {
     if(request.body.userName == "admin" && request.body.userPass == "password") {
         
         // Transferr to SESSION variable
-        request.session.user = request.body.username;
+        request.session.user = request.body.userName;
         
         // Change access to granted
         result = { success: true };
