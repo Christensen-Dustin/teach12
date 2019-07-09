@@ -4,7 +4,7 @@ function userLogin(request, response) {
     var result = { success: false };
     
     // check user input NAME and PASSWORD
-    if(request.body.username == "admin" && request.body.password == "password") {
+    if(request.body.userName == "admin" && request.body.userPass == "password") {
         
         // Transferr to SESSION variable
         request.session.user = request.body.username;
