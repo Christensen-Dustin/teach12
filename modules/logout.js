@@ -1,4 +1,5 @@
 function userLogout(request, response) {
+    console.log("userLogout started");
     
     // Is the user logged out, default FALSE
     var results = { success: false };
@@ -12,6 +13,8 @@ function userLogout(request, response) {
         // Change verification to user being logged out to TRUE
         results = { success: true };
     };
+    console.log("userLogout ended");
+    console.log(results);
     
     response.json(results);
 };
