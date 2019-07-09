@@ -1,6 +1,8 @@
-const { Pool } = require("pg");
+const path = require("path");
 const express = require("express");
 const app = express();
+
+const { Pool } = require("pg");
 
 const login  = require('./modules/login.js');
 const logout = require('./modules/logout.js');
@@ -32,7 +34,7 @@ const localPORT = 5000;
 app.set('port', (process.env.PORT || localPORT));
 
 // Static location of the PUBLIC directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 // To view all middleware function for requests
 app.use(logRequest);
