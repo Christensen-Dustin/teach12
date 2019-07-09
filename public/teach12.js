@@ -49,14 +49,14 @@ function logout() {
             // clearSection("middleLog");
             
             // Successful logout message
-            $("middleLog").text("Your are successfully Logged out.");
+            $("#middleLog").text("Your are successfully Logged out.");
         } else {
             
             // clear DIV - middleLog
             // clearSection("middleLog");
             
             // Unsuccessful logout message
-            $("middleLog").text("You have not successfully logged out.");
+            $("#middleLog").text("You have not successfully logged out.");
         }
     });
 };
@@ -77,14 +77,14 @@ function getServerTimeStamp() {
             // clearSection("timeStamp");
             
             // Display the Time Stamp
-            $("timeStamp").text("Server Time Stamp: " + results.timeStamp);
+            $("#timeStamp").text("Server Time Stamp: " + results.timeStamp);
         } else {
             
             // clear DIV - timeStamp
             // clearSection("timeStamp");
             
             // Display logged out message
-            $("timeStamp").text("Received a RESPONSE, though it was not successful.");
+            $("#timeStamp").text("Received a RESPONSE, though it was not successful.");
         }
     }).fail(function(results) {
         
@@ -92,7 +92,7 @@ function getServerTimeStamp() {
         // clearSection("timeStamp");
         
         // Fail attempt to retreive the server time stamp
-        $("timeStamp").text("Could not retrieve TIMESTAMP from SERVER.");
+        $("#timeStamp").text("Could not retrieve TIMESTAMP from SERVER.");
     });
 }
 
