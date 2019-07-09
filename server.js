@@ -1,6 +1,6 @@
 const path = require("path");
 const express = require("express");
-const app = express();
+var app = express();
 
 const { Pool } = require("pg");
 
@@ -27,7 +27,7 @@ app.use(session({
 app.use(express.json());
 
 // Support URL-encoded bodies
-app.use(express.urlencoded({ extend: true }));
+app.use(express.urlencoded({ extended: true }));
 
 // Where the site is to be HOSTed
 const localPORT = 5000;
