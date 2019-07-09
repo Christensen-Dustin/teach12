@@ -15,17 +15,17 @@ function login() {
         if(results.success && results) {
             
             // clear DIV - middleLog
-            clearSection("middlLog");
+            // clearSection("middlLog");
             
             // Successful Login
-            $("#middleLog").append("You are successfully logged in.");    
+            $("#middleLog").text("You are successfully logged in.");    
         } else {
             
             // clear DIV - middleLog
-            clearSection("middlLog");
+            // clearSection("middlLog");
             
             // Unsuccessful login
-            $("#middleLog").append("You have not successfully logged in.");
+            $("#middleLog").text("You have not successfully logged in.");
         }
     });   
 };
@@ -40,17 +40,17 @@ function logout() {
         if(results.success && results) {
             
             // clear DIV - middleLog
-            clearSection("middleLog");
+            // clearSection("middleLog");
             
             // Successful logout message
-            $("middleLog").append("Your are successfully Logged out.");
+            $("middleLog").text("Your are successfully Logged out.");
         } else {
             
             // clear DIV - middleLog
-            clearSection("middleLog");
+            // clearSection("middleLog");
             
             // Unsuccessful logout message
-            $("middleLog").append("You have not successfully logged out.");
+            $("middleLog").text("You have not successfully logged out.");
         }
     });
 };
@@ -65,25 +65,25 @@ function getServerTimeStamp() {
         if(results.success) {
             
             // clear DIV - timeStamp
-            clearSection("timeStamp");
+            // clearSection("timeStamp");
             
             // Display the Time Stamp
-            $("timeStamp").append("Server Time Stamp: " + results.timeStamp);
+            $("timeStamp").text("Server Time Stamp: " + results.timeStamp);
         } else {
             
             // clear DIV - timeStamp
-            clearSection("timeStamp");
+            // clearSection("timeStamp");
             
             // Display logged out message
-            $("timeStamp").append("Received a RESPONSE, though it was not successful.");
+            $("timeStamp").text("Received a RESPONSE, though it was not successful.");
         }
     }).fail(function(results) {
         
         // clear DIV - timeStamp
-        clearSection("timeStamp");
+        // clearSection("timeStamp");
         
         // Fail attempt to retreive the server time stamp
-        $("timeStamp").append("Could not retrieve TIMESTAMP from SERVER.");
+        $("timeStamp").text("Could not retrieve TIMESTAMP from SERVER.");
     });
 }
 
