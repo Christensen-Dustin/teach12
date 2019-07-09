@@ -32,7 +32,7 @@ const localPORT = 5000;
 app.set('port', (process.env.PORT || localPORT));
 
 // Static location of the PUBLIC directory
-app.use(express.static(path.join(_dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // To view all middleware function for requests
 app.use(logRequest);
