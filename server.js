@@ -6,7 +6,7 @@ const login  = require('./modules/login.js');
 const logout = require('./modules/logout.js');
 const verify = require('./modules/loginVerified.js');
 
-var session = require('expresss-session');
+var session = require('express-session');
 
 require('dotenv').config();
 
