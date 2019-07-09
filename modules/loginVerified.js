@@ -19,7 +19,7 @@ function verifyLogin(request, response, next) {
 function logVerifyRequest(request, response, next) {
     
     // confirm that the URL was passed correctly
-    console.log("Received a request for: " = request.url);
+    console.log("Received a request for: " + request.url);
     
     // continue on to the NEXT function
     next();
