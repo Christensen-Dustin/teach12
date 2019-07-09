@@ -39,5 +39,6 @@ function getServerTimeStamp(request, response) {
 
 module.exports = {
     verifyLogin: verifyLogin,
+    logVerifyRequest: logVerifyRequest,
     getServerTimeStamp: getServerTimeStamp
 };

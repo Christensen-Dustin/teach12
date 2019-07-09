@@ -37,7 +37,7 @@ app.set('port', (process.env.PORT || localPORT));
 app.use(express.static(path.join(__dirname, "public")));
 
 // To view all middleware function for requests
-app.use(logRequest);
+app.use(verify.logVerifyRequest);
 
 // Middleware function methods
 app.get('/getServerTime', verify.verifyLogin, verify.getServerTimeStamp);
