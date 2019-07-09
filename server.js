@@ -37,7 +37,7 @@ app.set('port', (process.env.PORT || localPORT));
 app.use(express.static(path.join(__dirname, "public")));
 
 // To view all middleware function for requests
-app.use(verify.logVerifyRequest);
+app.use(logVerifyRequest);
 
 // Paths
 app.post('/login',  userLogin);
