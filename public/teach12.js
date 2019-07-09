@@ -2,11 +2,11 @@
 function login() {
     
     // Get input from user
-    var userName = $("#name").val();
+    var userName = $("#username").val();
     var userPass = $("#password").val();
     
     // generate PARAMS for POST
-    var params = { userName: userName, userPass: userPass };
+    var params = { username: userName, password: userPass };
     
     // Send the POST
     $.post("/login", params, function(results) {

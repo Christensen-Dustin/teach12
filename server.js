@@ -1,8 +1,8 @@
-const path = require("path");
-const express = require("express");
+var path = require("path");
+var express = require("express");
 var app = express();
 
-const { Pool } = require("pg");
+var { Pool } = require("pg");
 
 // const login  = require('./modules/login.js');
 // const logout = require('./modules/logout.js');
@@ -13,12 +13,12 @@ var session = require('express-session');
 require('dotenv').config();
 
 // DATABASE Setup
-const db_url = process.env.DATABASE_URL;
-const pool = new Pool({connectString: db_url});
+var db_url = process.env.DATABASE_URL;
+var pool = new Pool({connectString: db_url});
 
 // Session Setup
 app.use(session({
-    secret: 'bacon-is-great',
+    secret: 'bacon-is-great-for-all-ocasions',
     resave: false,
     saveUninitialized: true
 }));
@@ -37,7 +37,7 @@ app.set('port', (process.env.PORT || localPORT));
 app.use(express.static(path.join(__dirname, "public")));
 
 // To view all middleware function for requests
-app.use(logVerifyRequest);
+app.use(logRequest);
 
 // Paths
 app.post('/login',  userLogin);
@@ -59,19 +59,19 @@ app.listen(app.get('port'), function() {
 function userLogin(request, response) {
     
     // access granted, default FALSE
-    var result = { success: false };
+    var results = { success: false };
     
     // check user input NAME and PASSWORD
-    if(request.body.userName == "admin" && request.body.userPass == "password") {
+    if(request.body.username == "admin" && request.body.password == "password") {
         
         // Transferr to SESSION variable
-        request.session.user = request.body.userName;
+        request.session.user = request.body.username;
         
         // Change access to granted
-        result = { success: true };
+        results = { success: true };
     };
     
-    response.json(result);
+    response.json(results);
 };
 
 function userLogout(request, response) {
@@ -122,7 +122,7 @@ function verifyLogin(request, response, next) {
     }
 };
 
-function logVerifyRequest(request, response, next) {
+function logRequest(request, response, next) {
     
     // confirm that the URL was passed correctly
     console.log("Received a request for: " + request.url);
