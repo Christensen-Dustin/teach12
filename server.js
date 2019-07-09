@@ -57,6 +57,7 @@ app.listen(app.get('port'), function() {
 ***************************************************************************/
 
 function userLogin(request, response) {
+    console.log("userLogin started");
     
     // access granted, default FALSE
     var results = { success: false };
@@ -70,11 +71,14 @@ function userLogin(request, response) {
         // Change access to granted
         results = { success: true };
     };
+    console.log("userLogin ended");
+    console.log(results);
     
     response.json(results);
 };
 
 function userLogout(request, response) {
+    console.log("userLogout started");
     
     // Is the user logged out, default FALSE
     var results = { success: false };
@@ -88,11 +92,14 @@ function userLogout(request, response) {
         // Change verification to user being logged out to TRUE
         results = { success: true };
     };
+    console.log("userLogout ended");
+    console.log(results);
     
     response.json(results);
 };
 
 function getServerTimeStamp(request, response) {
+    console.log("getServerTimeStamp started");
     
     // Get the Serve time
     var timeStamp = new Date();
@@ -105,9 +112,12 @@ function getServerTimeStamp(request, response) {
 };
 
 function verifyLogin(request, response, next) {
+    console.log("verifyLogin started");
     
     // check to see if user is logged in
     if(request.session.user) {
+        console.log("verifyLogin pass to NEXT()");
+        console.log(results);
         
         // Pass results to the NEXT function
         next();
@@ -123,10 +133,13 @@ function verifyLogin(request, response, next) {
 };
 
 function logRequest(request, response, next) {
+    console.log("logRequest started");
     
     // confirm that the URL was passed correctly
     console.log("Received a request for: " + request.url);
     
     // continue on to the NEXT function
+    console.log("logRequest pass to NEXT()");
+    console.log(results);
     next();
 };

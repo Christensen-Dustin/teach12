@@ -1,5 +1,6 @@
 // Function to login the USER
 function login() {
+    console.log("Login Button Clicked");
     
     // Get input from user
     var userName = $("#username").val();
@@ -10,6 +11,8 @@ function login() {
     
     // Send the POST
     $.post("/login", params, function(results) {
+        console.log("Returned from '/login'");
+        console.log(results);
         
         // check to see if user is logged-in
         if(results && results.success) {
@@ -32,9 +35,12 @@ function login() {
 
 // Function to logout the USER
 function logout() {
+    console.log("Logout Button Clicked");
     
     // POST to URL - /logout
     $.post("/logout", function(results) {
+        console.log("Returned from '/logout'");
+        console.log(results);
         
         // Check to see if the user if logged-out
         if(results && results.success) {
@@ -57,9 +63,12 @@ function logout() {
 
 // Timestamp Function
 function getServerTimeStamp() {
+    console.log("Time Stamp Button Clicked");
     
     // Send the GET request
     $.get("/getServerTime", function(results) {
+        console.log("Returned from '/getServerTime'");
+        console.log(results);
         
         // check if logged in and send Time Stamp
         if(results.success) {
