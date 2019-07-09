@@ -4,9 +4,9 @@ var app = express();
 
 var { Pool } = require("pg");
 
-// const login  = require('./modules/login.js');
-// const logout = require('./modules/logout.js');
-// const verify = require('./modules/loginVerified.js');
+const login  = require('./modules/login.js');
+const logout = require('./modules/logout.js');
+const verify = require('./modules/loginVerified.js');
 
 var session = require('express-session');
 
@@ -37,14 +37,18 @@ app.set('port', (process.env.PORT || localPORT));
 app.use(express.static(path.join(__dirname, "public")));
 
 // To view all middleware function for requests
-app.use(logRequest);
+// app.use(logRequest);
+app.use(verify.logVerifyRequest);
 
 // Paths
-app.post('/login',  userLogin);
-app.post('/logout', userLogout);
+// app.post('/login',  userLogin);
+app.post('/login', login.userLogin);
+// app.post('/logout', userLogout);
+app.post('/logout', logout.userLogout);
 
 // Middleware function methods
-app.get('/getServerTime', verifyLogin, getServerTimeStamp);
+// app.get('/getServerTime', verifyLogin, getServerTimeStamp);
+app.get('/getServerTime', verify.verifyLogin, verify.getServerTimeStamp);
 
 // Start the SERVER listening
 app.listen(app.get('port'), function() {
