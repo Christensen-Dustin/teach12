@@ -1,19 +1,22 @@
 function userLogin(request, response) {
+    console.log("userLogin started");
     
     // access granted, default FALSE
-    var result = { success: false };
+    var results = { success: false };
     
     // check user input NAME and PASSWORD
-    if(request.body.userName == "admin" && request.body.userPass == "password") {
+    if(request.body.username == "admin" && request.body.password == "password") {
         
         // Transferr to SESSION variable
-        request.session.user = request.body.userName;
+        request.session.user = request.body.username;
         
         // Change access to granted
-        result = { success: true };
+        results = { success: true };
     };
+    console.log("userLogin ended");
+    console.log(results);
     
-    response.json(result);
+    response.json(results);
 };
 
 module.exports = {
