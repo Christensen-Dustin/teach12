@@ -12,7 +12,7 @@ function login() {
     $.post("/login", params, function(results) {
         
         // check to see if user is logged-in
-        if(results.success && results) {
+        if(results && results.success) {
             
             // clear DIV - middleLog
             // clearSection("middlLog");
@@ -37,7 +37,7 @@ function logout() {
     $.post("/logout", function(results) {
         
         // Check to see if the user if logged-out
-        if(results.success && results) {
+        if(results && results.success) {
             
             // clear DIV - middleLog
             // clearSection("middleLog");

@@ -1,3 +1,15 @@
+function getServerTimeStamp(request, response) {
+    
+    // Get the Serve time
+    var timeStamp = new Date();
+    
+    // Add time to results
+    var results = { success: true, timeStamp: timeStamp };
+    
+    // return results
+    response.json(results);
+};
+
 function verifyLogin(request, response, next) {
     
     // check to see if user is logged in
@@ -23,18 +35,6 @@ function logVerifyRequest(request, response, next) {
     
     // continue on to the NEXT function
     next();
-};
-
-function getServerTimeStamp(request, response) {
-    
-    // Get the Serve time
-    var timeStamp = new Date();
-    
-    // Add time to results
-    var results = { success: true, timeStamp: timeStamp };
-    
-    // return results
-    response.json(results);
 };
 
 module.exports = {
