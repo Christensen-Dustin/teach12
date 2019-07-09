@@ -117,7 +117,6 @@ function verifyLogin(request, response, next) {
     // check to see if user is logged in
     if(request.session.user) {
         console.log("verifyLogin pass to NEXT()");
-        console.log(results);
         
         // Pass results to the NEXT function
         next();
@@ -140,6 +139,6 @@ function logRequest(request, response, next) {
     
     // continue on to the NEXT function
     console.log("logRequest pass to NEXT()");
-    console.log(results);
+    
     next();
 };
