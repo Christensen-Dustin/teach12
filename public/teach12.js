@@ -59,7 +59,7 @@ function logout() {
 function getServerTimeStamp() {
     
     // Send the GET request
-    $.get("getServerTime", function(results) {
+    $.get("/getServerTime", function(results) {
         
         // check if logged in and send Time Stamp
         if(results.success) {
