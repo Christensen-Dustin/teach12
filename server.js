@@ -47,4 +47,4 @@ app.post('/logout', logout.userLogout);
 // Start the SERVER listening
 app.listen(app.get('port'), function() {
     console.log('Server is listening on PORT: ' + app.get('port'));
-};
+});
